@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/artistsSearchFragment">
+
+    <fragment
+        android:id="@+id/artistsSearchFragment"
+        android:name="com.example.musicalartistsapplication.artist_search.presentation.screen.ArtistSearchFragment"
+        android:label="ArtistsListFragment"
+        tools:layout="@layout/fragment_artist_search">
+        <action
+            android:id="@+id/action_artistsListFragment_to_artistDetailsFragment"
+            app:destination="@id/artistDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/artistDetailsFragment"
+        android:name="com.example.musicalartistsapplication.artist_details.presentation.screen.ArtistDetailsFragment"
+        android:label="ArtistDetailsFragment"
+        tools:layout="@layout/fragment_artist_details" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="disambiguation"
+            app:argType="string" />
+        <argument
+            android:name="type"
+            app:argType="string" />
+        <argument
+            android:name="country"
+            app:argType="string" />
+        <argument
+            android:name="rating"
+            app:argType="float" />
+        <argument
+            android:name="votes"
+            app:argType="integer" />
+    </fragment>
+</navigation>
